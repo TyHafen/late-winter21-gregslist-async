@@ -69,7 +69,7 @@ export class JobsController {
 
     editJob(id) {
         const job = ProxyState.jobs.find(j => j.id == id)
-        document.getElementById('modal-body-slot').innerHTML.getJobForm(job)
+        document.getElementById('modal-body-slot').innerHTML = getJobForm(job)
         let modal = document.getElementById('new-listing')
         bootstrap.Modal.getOrCreateInstance(modal).toggle()
     }

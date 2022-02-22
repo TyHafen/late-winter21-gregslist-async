@@ -7,10 +7,11 @@ import { api } from "./AxiosService.js"
 
 class JobsService {
     async editJob(updateJob, id) {
-        const res = await api.put('jobs/' + updateJob)
+        const res = await api.put('jobs/' + id, updateJob)
         console.log("jobserve edit", res.data)
         const jobIndex = ProxyState.jobs.findIndex(j => j.id == id)
         ProxyState.jobs.splice(jobIndex, 1, new Job(res.data))
+        ProxyState.jobs = ProxyState.jobs
 
 
     }
