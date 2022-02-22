@@ -1,4 +1,5 @@
 import { Car } from "./Models/Car.js"
+import { Job } from "./Models/Job.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
@@ -15,9 +16,12 @@ const testCar = new Car(
 
 class AppState extends EventEmitter {
 
-  // NOTE just adds intellisense to our cars array that lets our code know its an array of cars, not other things 
-  /** @type {import('./Models/Car').Car[]} */
-  cars = [testCar]
+  // NOTE just adds intellisense to our cars array that lets our code know its an array of cars, not other things
+  /** @type {import('./Models/Car').Car[]}
+  /** @type {import('./Models/Job').Job[]} 
+  */
+  cars = []
+  jobs = []
 }
 
 
